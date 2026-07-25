@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: george-norton
       url-base: https://github.com/george-norton
-    - name: joaopedropio
-      url-base: https://github.com/joaopedropio
+    - name: ianmarquez
+      url-base: https://github.com/ianmarquez
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,7 +20,7 @@ manifest:
       remote: george-norton
       revision: main
     - name: snake-module
-      remote: joaopedropio
+      remote: ianmarquez
       revision: zephyr-4.1
   self:
     path: config
