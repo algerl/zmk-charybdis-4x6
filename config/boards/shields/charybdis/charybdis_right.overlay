@@ -70,3 +70,8 @@
         CHARYBDIS_TRACKBALL_PROCESSORS
     };
 };
+
+&cpi_cycle {
+    status = "okay";
+    sensor_device = <&trackball>;
+};

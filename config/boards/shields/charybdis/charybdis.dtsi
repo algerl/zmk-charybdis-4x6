@@ -10,6 +10,17 @@
         compatible = "zmk,battery-nrf-vddh";
     };
 
+    behaviors {
+        cpi_cycle: cpi_cycle {
+            compatible = "zmk,behavior-sensor-attr-cycle";
+            status = "disabled";
+            #binding-cells = <1>;
+            sensor_device = <&vbatt>;
+            attr = <0>;
+            values = <400 600 800 200>;
+        };
+    };
+
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;
