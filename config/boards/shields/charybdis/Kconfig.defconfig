@@ -6,6 +6,16 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
+if ZMK_BACKLIGHT
+
+config PWM
+	default y
+
+config LED_PWM
+	default y
+
+endif # ZMK_BACKLIGHT
+
 endif
 
 if SHIELD_CHARYBDIS_LEFT || SHIELD_CHARYBDIS_RIGHT || SHIELD_CHARYBDIS_DONGLE
