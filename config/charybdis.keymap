@@ -7,6 +7,9 @@
 #include "macros.dtsi"
 
 #define U_TAPPING_TERM 200
+#define CPI_CYCLE_FORWARD 1
+// Four-value cycle: +3 is equivalent to -1 without the module's negative-index overflow.
+#define CPI_CYCLE_BACKWARD 3
 
 &lt {
     tapping-term-ms = <U_TAPPING_TERM>;
@@ -57,6 +60,8 @@
         compatible = "zmk,keymap";
 
         BASE {
+            display-name = "BASE";
+
             bindings = <
 &kp ESC     &kp NUMBER_1       &kp N2             &kp N3            &kp N4                  &kp N5                    &kp N6  &kp N7                &kp N8              &kp N9               &kp N0                 &kp TILDE
 &kp TAB     &kp Q              &kp W              &kp E             &kp R                   &kp T                     &kp Y   &kp U                 &kp I               &kp O                &kp P                  &kp LEFT_BRACKET
@@ -68,6 +73,8 @@
         };
 
         SYMBOLS {
+            display-name = "SYMBOLS";
+
             bindings = <
 &trans  &kp F1             &kp F2            &kp F3        &kp F4            &kp F5                 &kp F6                 &kp F7         &kp F8          &kp F9             &kp F10            &kp F11
 &trans  &kp EXCL           &kp AT            &kp POUND     &kp DOLLAR        &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp PIPE       &kp AMPERSAND   &kp ASTERISK       &kp CARET           &kp F12
@@ -79,6 +86,8 @@
         };
 
         NAV_NUM {
+            display-name = "NAV_NUM";
+
             bindings = <
 &none        &none  &none  &none  &none  &none      &none      &none                         &none                         &none                    &none          &none
 &none        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5            &kp N6     &kp N7                       &kp N8                       &kp N9                  &kp N0         &none
@@ -90,9 +99,11 @@
         };
 
         MOUSE {
+            display-name = "MOUSE";
+
             bindings = <
 &trans  &trans      &trans             &trans           &trans  &trans          &trans  &trans     &trans            &trans  &trans            &trans
-&trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &mo 5           &trans  &cpi_cycle (1)     &cpi_cycle (-1)           &trans  &trans            &trans
+&trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &mo 5           &trans  &cpi_cycle CPI_CYCLE_FORWARD  &cpi_cycle CPI_CYCLE_BACKWARD  &trans  &trans  &trans
 &trans  &trans      &trans             &trans           &trans  &trans          &trans  &mkp LCLK  &mkp RCLK         &trans  &trans            &trans
 &trans  &trans      &trans             &trans           &trans  &trans          &trans  &trans     &trans            &trans  &trans            &trans
                                                                &trans          &trans  &trans     &kp F11  &kp RC(UP_ARROW)
@@ -101,6 +112,8 @@
         };
 
         SCROLL {
+            display-name = "SCROLL";
+
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -112,6 +125,8 @@
         };
 
         keyboard_controls {
+            display-name = "keyboard_controls";
+
             bindings = <
 &trans  &trans       &trans      &trans  &trans  &trans          &trans        &trans          &trans        &trans        &trans        &trans
 &trans  &bootloader  &sys_reset  &trans  &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
