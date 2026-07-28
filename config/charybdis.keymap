@@ -60,7 +60,7 @@
         compatible = "zmk,keymap";
 
         BASE {
-            display-name = "BASE";
+            display-name = "QWERTY";
 
             bindings = <
 &kp ESC     &kp NUMBER_1       &kp N2             &kp N3            &kp N4                  &kp N5                    &kp N6  &kp N7                &kp N8              &kp N9               &kp N0                 &kp TILDE
@@ -124,8 +124,8 @@
             >;
         };
 
-        keyboard_controls {
-            display-name = "keyboard_controls";
+        KEYBOARD_CONTROLS {
+            display-name = "KBD_CTRLS";
 
             bindings = <
 &trans  &trans       &trans      &trans  &trans  &trans          &trans        &trans          &trans        &trans        &trans        &trans
