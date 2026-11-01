@@ -3,12 +3,14 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "macros.dtsi"
 
 #define U_TAPPING_TERM 200
 #define CPI_CYCLE_FORWARD 1
+
 // Four-value cycle: +3 is equivalent to -1 without the module's negative-index overflow.
+
 #define CPI_CYCLE_BACKWARD 3
 
 &lt {
@@ -23,6 +25,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mods Right";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -34,6 +37,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "Homerow Mods Left";
             bindings = <&kp>, <&kp>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
@@ -61,79 +65,73 @@
 
         BASE {
             display-name = "QWERTY";
-
             bindings = <
-&kp ESC     &kp NUMBER_1       &kp N2             &kp N3            &kp N4                  &kp N5                    &kp N6  &kp N7                &kp N8              &kp N9               &kp N0                 &kp TILDE
-&kp TAB     &kp Q              &kp W              &kp E             &kp R                   &kp T                     &kp Y   &kp U                 &kp I               &kp O                &kp P                  &kp LEFT_BRACKET
-&kp LSHIFT  &hrm_left LALT A   &hrm_left LCTRL S  &hrm_left LCMD D  &hrm_left LEFT_SHIFT F  &kp G                     &kp H   &hrm_right RSHIFT J  &hrm_right RGUI K  &hrm_right RCTRL L  &hrm_right LALT SEMI  &kp APOS
-&kp LCTRL   &kp Z              &kp X              &kp C             &kp V                   &kp B                     &kp N   &lt 4 M              &kp COMMA           &kp PERIOD           &lt 5 SLASH            &kp RIGHT_BRACKET
-                                                                         &mt LSHIFT ESCAPE       &lt 1 SPACE  &lt 3 TAB  &mt RCTRL ENTER      &lt 2 BACKSPACE
-                                                                                         &mkp LCLK         &mkp RCLK  &kp LGUI
+&kp ESC         &kp NUMBER_1      &kp N2             &kp N3            &kp N4                  &kp N5       &kp N6           &kp N7               &kp N8             &kp N9              &kp N0                &kp TILDE
+&kp TAB         &kp Q             &kp W              &kp E             &kp R                   &kp T        &kp Y            &kp U                &kp I              &kp O               &kp P                 &kp LEFT_BRACKET
+&kp CAPS        &hrm_left LALT A  &hrm_left LCTRL S  &hrm_left LCMD D  &hrm_left LEFT_SHIFT F  &kp G        &kp H            &hrm_right RSHIFT J  &hrm_right RGUI K  &hrm_right RCTRL L  &hrm_right LALT SEMI  &kp APOS
+&kp LEFT_SHIFT  &kp Z             &kp X              &kp C             &kp V                   &kp B        &kp N            &lt 4 M              &kp COMMA          &kp PERIOD          &lt 5 SLASH           &kp RIGHT_BRACKET
+                                                     &kp LCTRL         &lt 1 SPACE             &lt 3 TAB    &mt RCTRL ENTER  &lt 2 BACKSPACE
+                                                                       &mkp LCLK               &mkp RCLK    &mkp LCLK
             >;
         };
 
         SYMBOLS {
             display-name = "SYMBOLS";
-
             bindings = <
-&trans  &kp F1             &kp F2            &kp F3        &kp F4            &kp F5                 &kp F6                 &kp F7         &kp F8          &kp F9             &kp F10            &kp F11
-&trans  &kp EXCL           &kp AT            &kp POUND     &kp DOLLAR        &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp PIPE       &kp AMPERSAND   &kp ASTERISK       &kp CARET           &kp F12
-&trans  &kp GRAVE          &kp SINGLE_QUOTE  &kp KP_MINUS  &kp KP_PLUS       &kp LEFT_BRACE         &kp RIGHT_BRACE        &kp UNDER      &kp KP_EQUAL    &kp DOUBLE_QUOTES  &kp TILDE           &kp RIGHT_BRACE
-&trans  &none              &none             &trans        &kp PERCENT       &kp LEFT_BRACKET       &kp RIGHT_BRACKET      &kp BACKSLASH  &trans          &trans             &trans              &trans
-                                                                   &trans          &trans  &trans  &trans  &trans
-                                                                                   &trans  &trans  &trans
+&trans  &kp F1     &kp F2            &kp F3        &kp F4       &kp F5                  &kp F6                 &kp F7         &kp F8         &kp F9             &kp F10    &kp F11
+&trans  &kp EXCL   &kp AT            &kp POUND     &kp DOLLAR   &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp PIPE       &kp AMPERSAND  &kp ASTERISK       &kp CARET  &kp F12
+&trans  &kp GRAVE  &kp SINGLE_QUOTE  &kp KP_MINUS  &kp KP_PLUS  &kp LEFT_BRACE          &kp RIGHT_BRACE        &kp UNDER      &kp KP_EQUAL   &kp DOUBLE_QUOTES  &kp TILDE  &kp RIGHT_BRACE
+&trans  &none      &none             &trans        &kp PERCENT  &kp LEFT_BRACKET        &kp RIGHT_BRACKET      &kp BACKSLASH  &trans         &trans             &trans     &trans
+                                     &trans        &trans       &trans                  &trans                 &trans
+                                                   &trans       &trans                  &trans
             >;
         };
 
         NAV_NUM {
             display-name = "NAV_NUM";
-
             bindings = <
-&none        &none  &none  &none  &none  &none      &none      &none                         &none                         &none                    &none          &none
-&none        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5            &kp N6     &kp N7                       &kp N8                       &kp N9                  &kp N0         &none
-&none        &kp LALT      &kp LCTRL     &kp LGUI      &kp LSHFT     &kp TAB           &kp LEFT   &hrm_right RIGHT_SHIFT DOWN  &hrm_right RIGHT_COMMAND UP  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &none
-&bootloader  &trans        &trans        &trans        &trans        &trans            &trans     &trans                       &trans                       &trans                  &trans         &bootloader
-                                                        &kp F1        &kp F5   &kp F12   &trans  &trans
-                                                                      &trans   &trans    &trans
+&none        &none     &none      &none     &none      &none      &none     &none                        &none                        &none                   &none          &none
+&none        &kp N1    &kp N2     &kp N3    &kp N4     &kp N5     &kp N6    &kp N7                       &kp N8                       &kp N9                  &kp N0         &none
+&none        &kp LALT  &kp LCTRL  &kp LGUI  &kp LSHFT  &kp TAB    &kp LEFT  &hrm_right RIGHT_SHIFT DOWN  &hrm_right RIGHT_COMMAND UP  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &none
+&bootloader  &trans    &trans     &trans    &trans     &trans     &trans    &trans                       &trans                       &trans                  &trans         &bootloader
+                                  &kp F1    &kp F5     &kp F12    &trans    &trans
+                                            &trans     &trans     &trans
             >;
         };
 
         MOUSE {
             display-name = "MOUSE";
-
             bindings = <
-&trans  &trans      &trans             &trans           &trans  &trans          &trans  &trans     &trans            &trans  &trans            &trans
-&trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &mo 5           &trans  &cpi_cycle CPI_CYCLE_FORWARD  &cpi_cycle CPI_CYCLE_BACKWARD  &trans  &trans  &trans
-&trans  &trans      &trans             &trans           &trans  &trans          &trans  &mkp LCLK  &mkp RCLK         &trans  &trans            &trans
-&trans  &trans      &trans             &trans           &trans  &trans          &trans  &trans     &trans            &trans  &trans            &trans
-                                                               &trans          &trans  &trans     &kp F11  &kp RC(UP_ARROW)
-                                                                               &trans  &trans     &trans
+&trans  &trans      &trans             &trans           &trans  &trans    &trans   &trans                        &trans                         &trans  &trans  &trans
+&trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &mo 5     &trans   &cpi_cycle CPI_CYCLE_FORWARD  &cpi_cycle CPI_CYCLE_BACKWARD  &trans  &trans  &trans
+&trans  &trans      &trans             &trans           &trans  &trans    &trans   &mkp LCLK                     &mkp RCLK                      &trans  &trans  &trans
+&trans  &trans      &trans             &trans           &trans  &trans    &trans   &trans                        &trans                         &trans  &trans  &trans
+                                       &trans           &trans  &trans    &kp F11  &kp RC(UP_ARROW)
+                                                        &trans  &trans    &trans
             >;
         };
 
         SCROLL {
             display-name = "SCROLL";
-
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans  &trans          &trans  &trans
-                                                &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
             >;
         };
 
         KEYBOARD_CONTROLS {
             display-name = "KBD_CTRLS";
-
             bindings = <
-&trans  &trans       &trans      &trans  &trans  &trans          &trans        &trans          &trans        &trans        &trans        &trans
-&trans  &bootloader  &sys_reset  &trans  &trans  &trans          &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
-&trans  &trans       &trans      &trans  &trans  &trans          &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &trans        &trans
-&trans  &trans       &trans      &trans  &trans  &trans          &trans        &trans          &trans        &trans        &trans        &trans
-                                      &trans  &trans  &trans          &trans  &trans
-                                              &trans  &trans          &trans
+&trans  &trans       &trans      &trans  &trans  &trans    &trans        &trans          &trans        &trans        &trans        &trans
+&trans  &bootloader  &sys_reset  &trans  &trans  &trans    &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans
+&trans  &trans       &trans      &trans  &trans  &trans    &bt BT_CLR    &bt BT_CLR_ALL  &bt BT_NXT    &bt BT_PRV    &trans        &trans
+&trans  &trans       &trans      &trans  &trans  &trans    &trans        &trans          &trans        &trans        &trans        &trans
+                                 &trans  &trans  &trans    &trans        &trans
+                                         &trans  &trans    &trans
             >;
         };
     };
