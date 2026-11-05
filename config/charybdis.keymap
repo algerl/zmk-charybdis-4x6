@@ -66,12 +66,12 @@
         BASE {
             display-name = "QWERTY";
             bindings = <
-&kp ESC              &kp NUMBER_1  &kp N2  &kp N3            &kp N4                  &kp N5       &kp N6           &kp N7               &kp N8             &kp N9              &kp N0                &kp TILDE
-&kp TAB              &kp Q         &kp W   &kp E             &kp R                   &kp T        &kp Y            &kp U                &kp I              &kp O               &kp P                 &kp LEFT_BRACKET
-&mt LSHIFT CAPSLOCK  &kp A         &kp S   &hrm_left LCMD D  &hrm_left LEFT_SHIFT F  &kp G        &kp H            &hrm_right RSHIFT J  &hrm_right RGUI K  &hrm_right RCTRL L  &hrm_right LALT SEMI  &kp APOS
-&kp LCTRL            &kp Z         &kp X   &kp C             &kp V                   &kp B        &kp N            &lt 4 M              &kp COMMA          &kp PERIOD          &lt 5 SLASH           &kp RIGHT_BRACKET
-                                           &kp LCTRL         &lt 1 SPACE             &lt 3 TAB    &mt RCTRL ENTER  &lt 2 BACKSPACE
-                                                             &mkp LCLK               &mkp RCLK    &mkp LCLK
+&kp ESC              &kp NUMBER_1  &kp N2  &kp N3     &kp N4                  &kp N5       &kp N6           &kp N7               &kp N8             &kp N9              &kp N0                &kp PAGE_UP
+&kp TAB              &kp Q         &kp W   &kp E      &kp R                   &kp T        &kp Y            &kp U                &kp I              &kp O               &kp P                 &kp PAGE_DOWN
+&mt LSHIFT CAPSLOCK  &kp A         &kp S   &kp D      &hrm_left LEFT_SHIFT F  &kp G        &kp H            &hrm_right RSHIFT J  &hrm_right RGUI K  &hrm_right RCTRL L  &hrm_right LALT SEMI  &kp APOS
+&kp LCTRL            &kp Z         &kp X   &kp C      &kp V                   &kp B        &kp N            &lt 4 M              &kp COMMA          &kp PERIOD          &lt 5 SLASH           &kp ENTER
+                                           &kp LCTRL  &lt 1 SPACE             &lt 3 TAB    &mt RCTRL ENTER  &lt 2 BACKSPACE
+                                                      &mkp LCLK               &mkp RCLK    &mkp LCLK
             >;
         };
 
