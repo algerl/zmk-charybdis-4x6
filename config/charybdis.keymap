@@ -78,24 +78,24 @@
         SYMBOLS {
             display-name = "SYMBOLS";
             bindings = <
-&none          &kp F1        &kp F2        &kp F3            &kp F4        &kp F5                &kp F6   &kp F7    &kp F8         &kp F9  &kp F10  &kp F11
-&none          &none         &kp C_VOL_DN  &kp K_MUTE        &kp C_VOL_UP  &none                 &kp INS  &kp HOME  &kp PAGE_UP    &none   &none    &kp F12
-&kp C_BRI_UP   &kp C_REWIND  &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &kp C_FAST_FORWARD    &kp DEL  &kp END   &kp PAGE_DOWN  &none   &none    &none
-&kp C_BRI_DEC  &none         &none         &none             &none         &none                 &none    &none     &none          &none   &none    &none
-                                           &trans            &trans        &trans                &trans   &trans
-                                                             &trans        &trans                &trans
+&trans                &kp F1  &kp F2        &kp F3      &kp F4            &kp F5             &kp F6   &kp F7    &kp F8         &kp F9  &kp F10  &kp F11
+&kp C_BRI_UP          &none   &kp K_PREV    &kp K_NEXT  &kp K_MUTE        &kp C_VOLUME_UP    &kp INS  &kp HOME  &kp PAGE_UP    &none   &none    &kp F12
+&kp C_BRIGHTNESS_DEC  &none   &kp C_REWIND  &kp C_FF    &kp K_PLAY_PAUSE  &kp C_VOL_DN       &kp DEL  &kp END   &kp PAGE_DOWN  &none   &none    &none
+&trans                &none   &none         &none       &none             &trans             &trans   &none     &none          &none   &none    &trans
+                                            &trans      &trans            &trans             &trans   &trans
+                                                        &trans            &trans             &trans
             >;
         };
 
         NAV_NUM {
             display-name = "NAV_NUM";
             bindings = <
-&none        &none     &none      &none     &none      &none      &kp A   &none   &none   &none                   &none          &none
-&none        &kp N1    &kp N2     &kp N3    &kp N4     &kp N5     &kp N7  &kp N8  &kp N9  &kp N9                  &kp N0         &none
-&none        &kp LALT  &kp LCTRL  &kp LGUI  &kp LSHFT  &kp TAB    &kp N4  &kp N5  &kp N6  &hrm_right RCTRL RIGHT  &kp RIGHT_ALT  &none
-&bootloader  &trans    &trans     &trans    &trans     &trans     &kp N1  &kp N2  &kp N3  &trans                  &trans         &bootloader
-                                  &kp F1    &kp F5     &kp F12    &trans  &trans
-                                            &trans     &trans     &trans
+&sys_reset   &none   &none  &none     &none           &none        &kp LC(X)        &none            &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &none
+&bootloader  &none   &none  &none     &kp UP          &none        &kp LC(V)        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS        &none
+&none        &none   &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT    &kp LC(C)        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS         &none
+&trans       &trans  &none  &none     &none           &none        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL        &none
+                            &trans    &trans          &trans       &trans           &trans
+                                      &trans          &trans       &trans
             >;
         };
 
