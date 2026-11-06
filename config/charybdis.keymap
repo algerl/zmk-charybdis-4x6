@@ -90,12 +90,12 @@
         NAV_NUM {
             display-name = "NAV_NUM";
             bindings = <
-&sys_reset   &none   &none  &none     &none           &none        &kp LC(X)        &none            &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &none
-&bootloader  &none   &none  &none     &kp UP          &none        &kp LC(V)        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS        &none
-&none        &none   &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT    &kp LC(C)        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS         &none
-&trans       &trans  &none  &none     &none           &none        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL        &none
-                            &trans    &trans          &trans       &trans           &trans
-                                      &trans          &trans       &trans
+&sys_reset   &none   &none  &none     &none           &kp PAGE_UP      &kp LC(X)        &none            &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &none
+&bootloader  &none   &none  &none     &kp UP          &kp PAGE_DOWN    &kp LC(V)        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS        &none
+&none        &none   &none  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT        &kp LC(C)        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS         &none
+&trans       &trans  &none  &none     &none           &none            &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL        &none
+                            &trans    &trans          &trans           &trans           &trans
+                                      &trans          &trans           &trans
             >;
         };
 
