@@ -50,7 +50,7 @@
         compatible = "zmk,combos";
 
         toggle_mouse_layer {
-            bindings = <&tog 3>;
+            bindings = <&tog 0>;
             key-positions = <51 22>;
         };
 
@@ -90,36 +90,12 @@
         NAV_NUM {
             display-name = "NAV_NUM";
             bindings = <
-&sys_reset   &none   &none  &msc SCRL_UP    &none         &msc SCRL_UP       &kp LC(X)        &none            &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &none
+&sys_reset   &none   &none  &none           &none         &msc SCRL_UP       &kp LC(X)        &none            &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &none
 &bootloader  &none   &none  &none           &mkp MCLK     &msc SCRL_DOWN     &kp LC(V)        &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS        &none
 &none        &none   &none  &msc SCRL_LEFT  &kp UP_ARROW  &msc SCRL_RIGHT    &kp LC(C)        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS         &none
 &trans       &trans  &none  &kp LEFT        &kp DOWN      &kp RIGHT          &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL        &none
                             &trans          &trans        &trans             &trans           &trans
                                             &trans        &trans             &trans
-            >;
-        };
-
-        MOUSE {
-            display-name = "MOUSE";
-            bindings = <
-&trans  &trans      &trans             &trans           &trans  &trans    &trans   &trans                        &trans                         &trans  &trans  &trans
-&trans  &kp K_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &mo 5     &trans   &cpi_cycle CPI_CYCLE_FORWARD  &cpi_cycle CPI_CYCLE_BACKWARD  &trans  &trans  &trans
-&trans  &trans      &trans             &trans           &trans  &trans    &trans   &mkp LCLK                     &mkp RCLK                      &trans  &trans  &trans
-&trans  &trans      &trans             &trans           &trans  &trans    &trans   &trans                        &trans                         &trans  &trans  &trans
-                                       &trans           &trans  &trans    &kp F11  &kp RC(UP_ARROW)
-                                                        &trans  &trans    &trans
-            >;
-        };
-
-        SCROLL {
-            display-name = "SCROLL";
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans
-                                &trans  &trans    &trans
             >;
         };
 
